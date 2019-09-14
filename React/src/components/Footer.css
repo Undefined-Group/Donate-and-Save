@@ -1,0 +1,25 @@
+.p{
+    text-align: center ;
+    
+}
+.con{
+margin-right: 30px;
+color:white;
+
+}
+.footer1{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;}
+.contact{
+    margin-left: 10px;
+    text-align:   right;
+    
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+   
+  }
+  
