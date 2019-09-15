@@ -183,7 +183,7 @@ export default class AddDonor extends Component {
                                             ? false
                                             : true
                                     }
-                                    className="btn btn-primary">DONATE</button>
+                                    className="btn btn-success">DONATE</button>
 
 
                             </div>
@@ -196,6 +196,7 @@ export default class AddDonor extends Component {
                     {this.state.renderRedirect}
                     <img alt="image1" className="bk-0 absolute1 infinite slow animated pulse " width='20%' src={require('./ht.png')} />
                     <AddSu />
+
                     <button
                         style={{ display: "none" }}
                         id='openModal'
@@ -203,6 +204,7 @@ export default class AddDonor extends Component {
                         data-target={`#addsu`}
                         className="btn btn-primary">MODAL</button>
                 </div>
+
                 <Terms />
             </>
         )

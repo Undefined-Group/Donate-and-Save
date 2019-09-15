@@ -2,15 +2,17 @@ import React, { Component } from "react";
 import axios from 'axios'
 export default class Home extends Component {
 state={counter:""}
-
-componentDidMount() {
+DonaDona
+componentWillMount() {
 	 setInterval(this.counther, 1000);
 
 };
 counther=()=>{  axios
 	.get("report/count",)
 	.then(response => {
-	  this.setState({ counter: response.data })
+		if(!isNaN(response.data)){
+			this.setState({ counter: response.data })
+		}
 	//   console.log('response.data from updateRepo -app -react', response.data);
 	})
 	.catch(error => {

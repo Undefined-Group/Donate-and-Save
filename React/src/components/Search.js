@@ -17,7 +17,7 @@ export default class Search extends Component {
         // console.log('submet', this.state)
         e.preventDefault()
         let newState = { ...this.state }
-        if (newState.state === 'All State') {
+        if (newState.state === 'All State') {//to get all states
             delete newState.state;
         }
         axios.post('/search', newState)

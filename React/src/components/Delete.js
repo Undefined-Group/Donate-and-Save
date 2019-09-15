@@ -48,10 +48,9 @@ class Delete extends Component {
       console.log('deleeeeeeeeeeeet after chack');
       console.log("this.state.Donor._id", this.state.Donor);
       axios
-        .put("/delete/delete", this.props.donor)
+        .put("/delete/delete", this.props.donor)//delete from database
         .then(response => {
-          // console.log('response', response.data)
-          axios.post('/search', this.props.lastSearch)
+          axios.post('/search', this.props.lastSearch)//research
             .then(res => {
               if (res.data.length === 0) {
                 console.log('object', res.data.length === 0)

@@ -46,12 +46,12 @@ export class SearchResults extends Component {
             </>
             );
         }
-        else if (search[0] === "notFound") {
+        else if (search[0] === "notFound") {//if search not found
             return (<> <h1 className="text-center m-5 text-white">Sorry , We couldn’t find any Donor</h1>
-                <img alt="image2"className="searchPNG slow animated fadeIn" width='30%' src={require('./Blood-Donation-PNG-Pic.png')} />
+                <img alt="image2" className="searchPNG slow animated fadeIn" width='30%' src={require('./Blood-Donation-PNG-Pic.png')} />
             </>);
         }
-        else if (search[0] === 0) {
+        else if (search[0] === 0) {//inital or Defualt
             return (<><img alt="image3" className="searchPNG slow animated fadeIn" width='50%' src={require('./searchSes.png')} /></>);
         }
 
