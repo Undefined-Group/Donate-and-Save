@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Delete from "./Delete";
 import Report from "./Report";
+import Phone from './Phone'
 
 export default class Details extends Component {
     state = {
@@ -38,10 +39,10 @@ export default class Details extends Component {
                 <tr className='text-center'>
                     <th scope="row">{i + 1}</th>
                     <td>{details.firstName}</td>
-                    <td>{this.getAge(details.birthday.slice(0, 10))}</td>
+                    {/* <td>{this.getAge(details.birthday.slice(0, 10))}</td> */}
                     <td className="text-danger text-center" >{details.bloodType}</td>
                     <td>{details.state}</td>
-                    <td><a className="" href={`tel:+${details.phone}`}>{`${details.phone}`}</a></td>
+                    <td><button className="text-info dropdown-item" onClick={() => document.getElementById(`phone${i}`).click()} >{`Call Now`}</button></td>
                     <td>{details.dateOfPublish.slice(0, 10)}</td>
                     <td>
                         <a className="info dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,8 +66,18 @@ export default class Details extends Component {
                         </div>
                     </td>
                 </tr>
-                        <Delete lastSearch={lastSearch} setSearch={setSearch} donor={details} i={i} />
-                        <Report donor={details} i={i} />
+                <button
+                    style={{ display: "none" }}
+                    id={`phone${i}`}
+                    type="button"
+                    className="dropdown-item text-info"
+                    data-toggle="modal"
+                    data-target={`#mobileModal${i}`}
+                ></button>
+                <Delete lastSearch={lastSearch} setSearch={setSearch} donor={details} i={i} />
+                <Report donor={details} i={i} />
+                <Phone donor={details} i={i} />
+
             </>
         )
     }

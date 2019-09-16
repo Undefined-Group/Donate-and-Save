@@ -28,7 +28,7 @@ export class SearchResults extends Component {
                             <tr >
                                 <th scope="col">#</th>
                                 <th scope="col">First Name</th>
-                                <th scope="col">Age</th>
+                                {/* <th scope="col">Age</th> */}
                                 <th className="text-danger" scope="col">Blood Type</th>
                                 <th scope="col">State</th>
                                 <th scope="col">Phone Number</th>

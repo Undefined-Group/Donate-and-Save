@@ -6,7 +6,7 @@ import AddSu from "./AddSu";
 
 export default class AddDonor extends Component {
     state = {
-        firstName: '',
+        firstName: 'Benefactor',
         lastName: '',
         phone: '',
         email: '',
@@ -24,7 +24,14 @@ export default class AddDonor extends Component {
     }
 
     changeValue = (e) => {
+        if (e.target.name === "firstName" && e.target.value === "") {
+            this.setState({ [e.target.name]: 'Benefactor' })
+        }
+        console.log('value', e.target.value)
         this.setState({ [e.target.name]: e.target.value })
+        if (e.target.name === "firstName" && e.target.value === "") {
+            this.setState({ [e.target.name]: 'Benefactor' })
+        }
     }
 
 
@@ -62,14 +69,15 @@ export default class AddDonor extends Component {
                                 </div>
                                 <div className="col-8">
                                     <input pattern="^[a-zA-Z]{2,15}$" title="Only Alphabet" maxLength="15" type="text" name="firstName" className="form-control input_filed inputEfect"
-                                        onChange={this.changeValue} value={this.state.firstName} placeholder="Enter First Name ..." required />
+                                        onChange={this.changeValue} placeholder="The Default is Benefactor" />
                                 </div>
                             </div>
 
                             <div className="form-group row ">
 
                                 <div className="col-4 pl-5 mt-2">
-                                    <label className="font text-danger">Last Name</label>
+                                    <label className="font text-danger">Last Name<span style={{ color: "green" }}> *</span>
+                                    </label>
                                 </div>
                                 <div className="col-8">
                                     <input pattern="^[a-zA-Z]{2,15}$" title="Only Alphabet" maxLength="15" type="tel" name="lastName" className="inputEfect form-control input_filed"
@@ -142,7 +150,8 @@ export default class AddDonor extends Component {
                             <div className="form-group row">
 
                                 <div className="col-4 pl-5 mt-2">
-                                    <label className="font text-danger">Email</label>
+                                    <label className="font text-danger">Email<span style={{ color: "green" }}> *</span>
+                                    </label>
                                 </div>
                                 <div className="col-8">
                                     <input title="example@gmail.com" type="email" name="email" onChange={this.changeValue} className="form-control inputEfect input_filed"
@@ -151,11 +160,11 @@ export default class AddDonor extends Component {
 
                             </div>
 
-
                             <div className="form-group row ">
 
                                 <div className="col-4 pl-5 mt-2">
-                                    <label className="font text-danger " >Birthday</label>
+                                    <label className="font text-danger " >Birthday<span style={{ color: "green" }}> *</span>
+                                    </label>
                                 </div>
                                 <div className="col-8">
                                     <input onChange={this.changeValue} name="birthday" className="form-control inputEfect" type="date" min="1900-01-01" max={new Date().toJSON().slice(0, 10)} id="example-date-input" required />
@@ -171,8 +180,13 @@ export default class AddDonor extends Component {
                                             className="badge-pill m-1 badge-danger"
                                             data-toggle="modal"
                                             data-target="#modelTerms"
-                                        >Terms</span>and Yes I Can Donate</label>
+                                        >Terms</span>and Yes I Can Donate
+                                    </label>
                                 </div>
+
+                            </div>
+                            <div className="form-check form-group row     ">
+                                < p style={{ color: "green" }}>* It will be hidden in search</p>
                             </div>
 
                             <div className="form-group row   mt-4">
